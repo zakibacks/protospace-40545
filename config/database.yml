@@ -13,17 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: ajax_app_40545_development
+  database: protospace_40545_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ajax_app_40545_test
+  database: protospace_40545_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -47,8 +50,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
-  database: ajax_app_40545_production
-  username: ajax_app_40545
-  password: <%= ENV["ajax_app_40545_DATABASE_PASSWORD"] %>
+  database: protospace_40545_production
+  username: protospace_40545
+  password: <%= ENV["PROTOSPACE_40545_DATABASE_PASSWORD"] %>
