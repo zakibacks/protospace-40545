@@ -47,5 +47,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
+  database: ajax_app_40545_production
+  username: ajax_app_40545
+  password: <%= ENV["ajax_app_40545_DATABASE_PASSWORD"] %>
