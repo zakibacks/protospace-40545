@@ -6,7 +6,7 @@ class CreatePrototypes < ActiveRecord::Migration[7.0]
       t.text :concept
       t.timestamps
     
-      add_reference :prototypes, :user, foreign_key: true
+      #! add_reference :prototypes, :user, foreign_key: true
     end
   end
 end
