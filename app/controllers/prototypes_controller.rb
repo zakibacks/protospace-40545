@@ -27,14 +27,14 @@ class PrototypesController < ApplicationController
   def edit
     @prototype = Prototype.find(params[:id])
     unless current_user == @prototype.user
-      redirect_to root_path
+      redirect_to prototype_path
     end
   end
 
   def update
-    if prototype = Prototype.find(params[:id])
-       prototype.update(prototype_params)
-       redirect_to root_path
+      prototype = Prototype.find(params[:id])
+      if prototype.update(prototype_params)
+       redirect_to prototype_path
     else
       render :edit, status: :unprocessable_entity
     end
