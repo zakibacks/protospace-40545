@@ -40,9 +40,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_11_085632) do
   end
 
   create_table "comments", charset: "utf8", force: :cascade do |t|
-    t.text "content"
     t.bigint "user_id", null: false
     t.bigint "prototype_id", null: false
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prototype_id"], name: "index_comments_on_prototype_id"
